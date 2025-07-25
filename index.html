@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>unofficial osu! on web</title>
+        <title>webosu! old</title>
         <link rel="stylesheet" href="style/picnic.min.css">
         <link rel="stylesheet" type="text/css" href="style/main.css">
         <!-- <link href="//fonts.googleapis.com/css?family=Exo+2:400,600italic" rel="stylesheet" type="text/css"> -->
@@ -37,7 +37,7 @@
 
         <nav id="main-nav">
             <div class="nav-link">
-                <a href="index.html" class="brand">osu! on web</a>
+                <a href="index.html" class="brand">webosu! old</a>
                 <a href="new.html" class="pseudo button">New</a>
                 <a href="hot.html" class="pseudo button">Popular</a>
                 <a href="genre.html" class="pseudo button">Genres</a>
@@ -49,10 +49,10 @@
                 </form>
             </div>
             <div class="nav-tool">
-                <a href="local.html" class="pseudo button">Favorite</a>
+                <a href="local.html" class="pseudo button">Liked</a>
                 <a href="faq.html" class="pseudo button">FAQ</a>
                 <a href="settings.html" class="pseudo button">Settings</a>
-                <a onclick="document.documentElement.requestFullscreen();" class="pseudo button">Enter full screen</a>
+
             </div>
         </nav>
 
@@ -74,7 +74,7 @@
                                 <td>Score</td>
                                 <td>Accuracy</td>
                                 <td>Mods</td>
-                                <td>Timestamp</td>
+                                <td>Time</td>
                             </tr>
                         </thead>
                         <tbody id="activity-list">
@@ -124,7 +124,7 @@
                 </div>
                 <div class="text">
                     Have fun playing!
-                    Join the <a href="https://https://discord.gg/Ab8bfTXG7E>discord server!</a>
+                    Join the <a href="https://https://discord.gg/Ab8bfTXG7E">discord server!</a>
                 </div>
                 <div class="text">Release version 1.4.4 -- Check the <a href="https://github.com/Mineturtlee/webosu">Github</a></div>
             </div>
@@ -249,7 +249,7 @@
             if (window.localforage) {
                 window.localforage.getItem("likedsidset", function(err, val){
                     if (err) {
-                        document.getElementById("beatmap-list-liked").innerText = "收藏夹加载失败。";
+                        document.getElementById("beatmap-list-liked").innerText = "Failed to load favorites.";
                         return;
                     }
                     if (val && val.size) {
@@ -259,7 +259,7 @@
                             addBeatmapSid(list[i], listlike);
                     }
                     else {
-                        document.getElementById("beatmap-list-liked").innerText = "你还没有收藏一首歌曲哦！点击曲目右下角的爱心以收藏这个曲目。";
+                        document.getElementById("beatmap-list-liked").innerText = "You haven't liked any beatmaps yet! Click on a mapset, and once it's loaded, click the heart icon to like it.";
                     }
                 });
             }
